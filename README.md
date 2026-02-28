@@ -1,5 +1,24 @@
 # 📚 Sistema de Gerenciamento de Biblioteca — Java Console
 
+© 2025 — Cristian de Lima Meira (crisslm)
+
+Todos os direitos reservados.
+Este projeto é de propriedade intelectual exclusiva do autor e não possui licença de uso aberta.
+É expressamente proibido:
+Copiar total ou parcialmente o código
+Reproduzir, distribuir ou modificar o projeto
+Publicar versões derivadas
+Utilizar o código para fins comerciais ou educacionais sem autorização
+Reutilizar a estrutura, lógica ou organização do sistema
+Redistribuir este repositório em outras plataformas
+O acesso ao código é permitido apenas para visualização e estudo pessoal, sem qualquer direito de reutilização.
+Qualquer uso não autorizado constitui violação de direitos autorais e poderá resultar em medidas legais conforme a legislação vigente.
+
+Para solicitações de uso, autorização ou licenciamento, entre em contato com o autor.
+
+GitHub: https://github.com/crisslm
+Nome legal do autor: Cristian de Lima Meira
+
 ## 📖 Sobre o Projeto
 
 Este projeto consiste em um sistema de console desenvolvido em **Java** para gerenciamento de uma biblioteca, permitindo controlar:
