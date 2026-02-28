@@ -45,8 +45,11 @@ O sistema está organizado em pacotes com responsabilidades bem definidas.
 Sistema-deBiblioteca/
  └── src/
      ├── controller/
+     │    ├── AutorController.java
      │    ├── ClienteController.java
-     │    ├── Controller.java
+     │    ├── EmprestimoController.java
+     │    ├── HistoricoController.java
+     │    ├── LivroController.java
      │    └── MenuController.java
      │
      ├── main/
@@ -302,5 +305,6 @@ Projeto acadêmico para prática de desenvolvimento em Java com arquitetura orga
 ## 📄 Licença
 
 Uso livre para fins educacionais.
+
 
 
