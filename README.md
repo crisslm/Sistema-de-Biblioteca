@@ -17,6 +17,7 @@ Este projeto é de propriedade intelectual exclusiva do autor e não possui lice
 </ul>
 Para solicitações de uso, autorização ou licenciamento, entre em contato com o autor.
 
+
 GitHub: https://github.com/crisslm
 Nome legal do autor: Cristian de Lima Meira
 
@@ -325,6 +326,7 @@ Projeto acadêmico para prática de desenvolvimento em Java com arquitetura orga
 ## 📄 Licença
 
 Uso livre para fins educacionais.
+
 
 
 
