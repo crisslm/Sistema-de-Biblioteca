@@ -1,0 +1,12 @@
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date = LocalDate.parse("03/12/2006", formatter);
+            LocalDate hoje = LocalDate.now();
+            Livro livro = new Livro(idGenerator(), "Alice in Borderland", "Monteiro lobato", true, date, hoje);
+            
+            System.out.printf("ID: %06d\nBook: %s\nAuthor: %s\nStatus: %s",livro.getId(), livro.getTitulo(), livro.getAutor(), statusFormatter(false));
+
+            String id = tools.idGenerator();
+            Cliente cliente = new Cliente(id, "Cristian", "cristian.meira15@gmail.com");
+            Historico historico = new Historico(cliente, null);
+
+            System.out.println(historico.getCliente().getId() + " " + historico.getCliente().getEmail());

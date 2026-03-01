@@ -21,7 +21,7 @@ public class ClienteService {
             id = util.idGenerator();
         } while(util.sameClientId(clienteRepository, id));
 
-        if(!util.emailValido(email)) System.out.println("Email invalido. Tente novamente\n");
+        if(!util.emailValido(email)) System.out.println("Email invalido. Tente novamente.\n");
         while(!util.emailValido(email)){
             System.out.print("Email: ");
             email = sc.nextLine();
@@ -29,8 +29,8 @@ public class ClienteService {
                 System.out.println("\nEmail Invalido. Tente novamente.\n");
         }
 
-        Cliente cliente = new Cliente(id, nome, email);
-        clienteRepository.salvar(cliente);
+        Cliente novoCliente = new Cliente(id, nome, email);
+        clienteRepository.salvar(novoCliente);
     }
 
     public void listar_clientes(){

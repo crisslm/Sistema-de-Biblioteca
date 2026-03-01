@@ -5,15 +5,16 @@
 Todos os direitos reservados.
 Este projeto é de propriedade intelectual exclusiva do autor e não possui licença de uso aberta.
 É expressamente proibido:
-Copiar total ou parcialmente o código
-Reproduzir, distribuir ou modificar o projeto
-Publicar versões derivadas
-Utilizar o código para fins comerciais ou educacionais sem autorização
-Reutilizar a estrutura, lógica ou organização do sistema
-Redistribuir este repositório em outras plataformas
-O acesso ao código é permitido apenas para visualização e estudo pessoal, sem qualquer direito de reutilização.
-Qualquer uso não autorizado constitui violação de direitos autorais e poderá resultar em medidas legais conforme a legislação vigente.
-
+<ul>
+  <li>Copiar total ou parcialmente o código</li>
+  <li>Reproduzir, distribuir ou modificar o projeto</li>
+  <li>Publicar versões derivadas</li>
+  <li>Utilizar o código para fins comerciais ou educacionais sem autorização</li>
+  <li>Reutilizar a estrutura, lógica ou organização do sistema</li>
+  <li>Redistribuir este repositório em outras plataformas</li>
+  <li>O acesso ao código é permitido apenas para visualização e estudo pessoal, sem qualquer direito de reutilização.</li>
+  <li>Qualquer uso não autorizado constitui violação de direitos autorais e poderá resultar em medidas legais conforme a legislação vigente.</li>
+</ul>
 Para solicitações de uso, autorização ou licenciamento, entre em contato com o autor.
 
 GitHub: https://github.com/crisslm
