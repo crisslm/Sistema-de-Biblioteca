@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ClienteController {
     Scanner sc = new Scanner(System.in);
-    ClienteService clienteService;
+    private final ClienteService clienteService;
 
     public ClienteController(ClienteService clienteService){
         this.clienteService = clienteService;

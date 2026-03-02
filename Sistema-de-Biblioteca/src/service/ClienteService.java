@@ -33,6 +33,11 @@ public class ClienteService {
         clienteRepository.salvar(novoCliente);
     }
 
+    public void deletar_cliente(String id){
+        Cliente cliente = clienteRepository.buscar(id);
+        clienteRepository.deletar(cliente);
+    }
+
     public void listar_clientes(){
         for(Cliente cliente : clienteRepository.lista_clientes()){
             System.out.println("------------------------");
