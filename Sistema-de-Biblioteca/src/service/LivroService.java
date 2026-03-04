@@ -37,9 +37,17 @@ public class LivroService {
         }
     }
 
+    public boolean existe_livros(){
+        if(livroRepository.lista_livros().isEmpty()){
+            return false;
+        }
+        return true;
+    }
+
     public void listar_livros(){
-        System.out.println("--------------------------------");
+        System.out.println("============================");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        int count = 0;
         for(Livro livro : livroRepository.lista_livros()){
             System.out.printf("Status: %s\n", livro_disponivel(livro));
             System.out.printf("ID: %s\n", livro.getId());
@@ -47,9 +55,82 @@ public class LivroService {
             System.out.printf("Autor: %s\n", livro.getAutor().getNome());
             System.out.printf("Nascimento do Autor: %s\n", formatter.format(livro.getAutor().getDataNascimento()));
             System.out.printf("Data de cadastro: %s\n", formatter.format(livro.getDataCadastro()));
-            System.out.println("--------------------------------");
+            System.out.println("============================");
+            count++;
+        }
+        if(count == 0){
+            System.out.println("Nenhum livro encontrado no momento.\n");
+            System.out.println("============================");
         }
     }
+
+    public void listar_livros_disponiveis(){
+        System.out.println("============================");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        int count = 0;
+        for(Livro livro : livroRepository.lista_livros()){
+            if(livro.getDisponivel()){
+                System.out.printf("Status: %s\n", livro_disponivel(livro));
+                System.out.printf("ID: %s\n", livro.getId());
+                System.out.printf("Titulo: %s\n", livro.getTitulo());
+                System.out.printf("Autor: %s\n", livro.getAutor().getNome());
+                System.out.printf("Nascimento do Autor: %s\n", formatter.format(livro.getAutor().getDataNascimento()));
+                System.out.printf("Data de cadastro: %s\n", formatter.format(livro.getDataCadastro()));
+                System.out.println("============================");
+                count++;
+            }
+        }
+        if(count == 0){
+            System.out.println("Nenhum livro disponivel foi encontrado.\n");
+            System.out.println("============================");
+        }
+    }
+
+    public void listar_livros_por_titulo(String titulo){
+        System.out.println("============================");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        int count = 0;
+        for(Livro livro : livroRepository.lista_livros()){
+            if(livro.getTitulo().equals(titulo)){
+                System.out.printf("Status: %s\n", livro_disponivel(livro));
+                System.out.printf("ID: %s\n", livro.getId());
+                System.out.printf("Titulo: %s\n", livro.getTitulo());
+                System.out.printf("Autor: %s\n", livro.getAutor().getNome());
+                System.out.printf("Nascimento do Autor: %s\n", formatter.format(livro.getAutor().getDataNascimento()));
+                System.out.printf("Data de cadastro: %s\n", formatter.format(livro.getDataCadastro()));
+                System.out.println("============================");
+                count++;
+            }
+        }
+        if(count == 0){
+            System.out.println("Nenhum livro com esse titulo foi encontrado.\n");
+            System.out.println("============================");
+        }
+    }
+
+    public void listar_livros_por_autor(String autor){
+        System.out.println("============================");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        int count = 0;
+        for(Livro livro : livroRepository.lista_livros()){
+            if(livro.getAutor().equals(autor)){
+                System.out.printf("Status: %s\n", livro_disponivel(livro));
+                System.out.printf("ID: %s\n", livro.getId());
+                System.out.printf("Titulo: %s\n", livro.getTitulo());
+                System.out.printf("Autor: %s\n", livro.getAutor().getNome());
+                System.out.printf("Nascimento do Autor: %s\n", formatter.format(livro.getAutor().getDataNascimento()));
+                System.out.printf("Data de cadastro: %s\n", formatter.format(livro.getDataCadastro()));
+                System.out.println("============================");
+                count++;
+            }
+        }
+        if(count == 0){
+            System.out.println("Nenhum livro com esse autor foi encontrado.\n");
+            System.out.println("============================");
+        }
+    }
+
+
 
     public Livro buscar_id(String id) {
         for (Livro livro : livroRepository.lista_livros()) {
@@ -76,5 +157,17 @@ public class LivroService {
             }
         }
         return null;
+    }
+
+    public void printar_livro(Livro livro){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println("============================");
+        System.out.printf("Status: %s\n", livro_disponivel(livro));
+        System.out.printf("ID: %s\n", livro.getId());
+        System.out.printf("Titulo: %s\n", livro.getTitulo());
+        System.out.printf("Autor: %s\n", livro.getAutor().getNome());
+        System.out.printf("Nascimento do Autor: %s\n", formatter.format(livro.getAutor().getDataNascimento()));
+        System.out.printf("Data de cadastro: %s\n", formatter.format(livro.getDataCadastro()));
+        System.out.println("============================");
     }
 }

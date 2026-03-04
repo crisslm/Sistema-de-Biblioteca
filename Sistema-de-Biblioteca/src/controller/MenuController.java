@@ -13,7 +13,19 @@ public class MenuController {
         this.menuService = menuService;
     }
 
-    public int menuPrincipal(){
+    public int menu_principal(){
         return menuService.menu_principal();
+    }
+
+    public int menu_buscar_livro(){
+        return menuService.menu_buscar_livro();
+    }
+
+    public int menu_buscar_cliente(){
+        return menuService.menu_buscar_cliente();
+    }
+
+    public  int menu_filtragem_livros(){
+        return menuService.menu_filtragem_livros();
     }
 }

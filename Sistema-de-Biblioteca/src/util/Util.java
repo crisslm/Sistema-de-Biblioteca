@@ -83,14 +83,6 @@ public class Util {
         return false;
     }
 
-    public String statusFormatter(boolean disponivel){
-        if(disponivel){
-            return "Disponivel";
-        } else{
-            return "Indisponível";
-        }
-    }
-
     public boolean emailValido(String email) {
         String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return email.matches(regex);
@@ -136,3 +128,5 @@ public class Util {
     }
 
 }
+
+

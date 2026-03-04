@@ -1,10 +1,7 @@
 package controller;
 
 import model.Autor;
-import repository.AutorRepository;
 import service.AutorService;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class AutorController {

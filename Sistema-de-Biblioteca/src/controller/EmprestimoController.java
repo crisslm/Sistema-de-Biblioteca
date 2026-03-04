@@ -30,18 +30,40 @@ public class EmprestimoController {
 
     public void emprestimo_livro(){
         livroService.listar_livros();
-        System.out.println("Realizando emprestimo: ");
-        System.out.println("======================");
-        System.out.print("Nome do cliente: ");
+        if(!livroService.existe_livros()){
+            System.out.println("Nao ha como fazer emprestimos.\n");
+        } else {
+            System.out.println("Realizando emprestimo: ");
+            System.out.println("============================");
+            System.out.print("Nome do cliente: ");
+            String nome = sc.nextLine();
+            Cliente cliente = clienteService.buscar_cliente_nome(nome);
+            if(cliente == null){
+                System.out.println("Cliente não cadastrado.\n");
+                System.out.println("============================");
+                return;
+            }
+            int opcao = menuService.menu_buscar_livro();
+            Livro livro = util.busca_livro(livroService, opcao);
+            if(livro == null){
+                System.out.println("Livro nao encontrado.\n");
+                System.out.println("============================");
+                return;
+            }
+            emprestimoService.emprestimo_livro(cliente, livro);
+            System.out.printf("Livro %s de %s emprestado com sucesso!\n", livro.getTitulo(), livro.getAutor().getNome());
+        }
+    }
+
+    public void devolucao_livro(){
+        System.out.println("============================");
+        System.out.println("Nome do cliente: ");
         String nome = sc.nextLine();
-        Cliente cliente = clienteService.buscar_nome(nome);
+        Cliente cliente = clienteService.buscar_cliente_nome(nome);
         if(cliente == null){
-            System.out.println("Cliente não cadastrado.");
+            System.out.println("Cliente não encontrado.\n");
             return;
         }
-        int opcao = menuService.menu_escolhe_livro();
-        Livro livro = util.busca_livro(livroService, opcao);
-        emprestimoService.emprestimo_livro(cliente, livro);
-        System.out.printf("Livro %s de %s emprestado com sucesso!\n", livro.getTitulo(), livro.getAutor().getNome());
+        emprestimoService.devolucao_livro(cliente);
     }
 }

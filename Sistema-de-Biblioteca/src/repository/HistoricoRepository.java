@@ -13,18 +13,11 @@ public class HistoricoRepository {
         historicos.add(historico);
     }
 
-    public void salvar_emprestimo(Emprestimo emprestimo, EmprestimoRepository emprestimoRepository){
-
-        Historico historico = new Historico();
+    public void salvar_emprestimo(Emprestimo emprestimo, List<Emprestimo> emprestimos){
+        Historico historico = new Historico(emprestimo.getCliente(), emprestimos);
     }
 
-    public void deletar(Historico historico){
-        historicos.remove(historico);
-    }
-
-
-
-    public List<Historico> listar_historico(){
+    public List<Historico> listar_historicos(){
         return historicos;
     }
 }

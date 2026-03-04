@@ -9,6 +9,7 @@ public class Historico {
     private List<Emprestimo> emprestimos;
 
     public Historico(Cliente cliente, List<Emprestimo> emprestimos) {
+        this.cliente = cliente;
         this.emprestimos = emprestimos;
     }
 
@@ -16,7 +17,7 @@ public class Historico {
         return cliente;
     }
 
-    public List<Emprestimo> getHistorico() {
+    public List<Emprestimo> getEmprestimos() {
         return emprestimos;
     }
 
