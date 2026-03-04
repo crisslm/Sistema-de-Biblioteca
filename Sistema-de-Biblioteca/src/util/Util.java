@@ -7,8 +7,10 @@ import java.util.Scanner;
 
 import model.Autor;
 import model.Cliente;
+import model.Emprestimo;
 import model.Livro;
 import repository.*;
+import service.LivroService;
 
 public class Util {
     Scanner sc = new Scanner(System.in);
@@ -63,6 +65,15 @@ public class Util {
         return false;
     }
 
+    public boolean sameEmprestimoId(EmprestimoRepository emprestimoRepository, String id){
+        for(Emprestimo emprestimo : emprestimoRepository.lista_emprestimos()){
+            if(id.equals(emprestimo.getId())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean sameAuthorId(AutorRepository autorRepository, String id){
         for(Autor autor : autorRepository.lista_autores()){
             if(id.equals(autor.getId())){
@@ -84,4 +95,44 @@ public class Util {
         String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return email.matches(regex);
     }
+
+    public int validar_opcao(int opcao, int min, int max){
+        while(true){
+            try{
+                System.out.print("Digite aqui: ");
+                opcao = sc.nextInt();
+                if(opcao > max || opcao < min){
+                    System.out.println("Entrada invalida. Tente novamente.\n");
+                    continue;
+                } else{
+                    break;
+                }
+            } catch (Exception e) {
+                sc.next();
+                System.out.println("Entrada invalida. Tente novamente.\n");
+            }
+        }
+        return opcao;
+    }
+
+    public Livro busca_livro(LivroService livroService, int opcoes){
+        switch(opcoes){
+            case 1 -> {
+                String id;
+                System.out.print("ID: ");
+                id = sc.nextLine();
+                return livroService.buscar_id(id);
+            }
+            case 2 -> {
+                String titulo;
+                System.out.print("Titulo: ");
+                titulo = sc.nextLine();
+                return livroService.buscar_titulo(titulo);
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
 }

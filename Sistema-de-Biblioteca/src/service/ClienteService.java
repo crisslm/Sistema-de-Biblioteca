@@ -34,10 +34,27 @@ public class ClienteService {
     }
 
     public void deletar_cliente(String id){
-        Cliente cliente = clienteRepository.buscar(id);
+        Cliente cliente = buscar_id(id);
         clienteRepository.deletar(cliente);
     }
 
+    public Cliente buscar_id(String id) {
+        for (Cliente cliente : clienteRepository.lista_clientes()) {
+            if (cliente.getId().equals(id)) {
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    public Cliente buscar_nome(String nome){
+        for(Cliente cliente : clienteRepository.lista_clientes()){
+            if(nome.equals(cliente.getNome())){
+                return cliente;
+            }
+        }
+        return null;
+    }
     public void listar_clientes(){
         for(Cliente cliente : clienteRepository.lista_clientes()){
             System.out.println("------------------------");

@@ -16,10 +16,10 @@ public class LivroRepository {
         livros.remove(livro);
     }
 
-    public Livro buscar(String id) {
-        for (Livro livros : livros) {
-            if (livros.getId().equals(id)) {
-                return livros;
+    public Livro buscar_id(String id) {
+        for (Livro livro : livros) {
+            if (livro.getId().equals(id)) {
+                return livro;
             }
         }
         return null;

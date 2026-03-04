@@ -1,14 +1,11 @@
 package main;
 
-import controller.AutorController;
-import controller.ClienteController;
-import controller.LivroController;
+import controller.*;
 import repository.AutorRepository;
 import repository.ClienteRepository;
+import repository.EmprestimoRepository;
 import repository.LivroRepository;
-import service.AutorService;
-import service.ClienteService;
-import service.LivroService;
+import service.*;
 
 public class Main {
     public static void main(String [] args){
@@ -17,12 +14,18 @@ public class Main {
         AutorController autorController = new AutorController(autorService);
         LivroRepository livroRepository = new LivroRepository();
         LivroService livroService = new LivroService(livroRepository);
-        LivroController livroController= new LivroController(livroService, autorController);
+        LivroController livroController = new LivroController(livroService, autorController);
+        ClienteRepository clienteRepository = new ClienteRepository();
+        ClienteService clienteService = new ClienteService(clienteRepository);
+        ClienteController clienteController = new ClienteController(clienteService);
+        MenuService menuService = new MenuService();
+        MenuController menuController = new MenuController(menuService);
+        EmprestimoRepository emprestimoRepository = new EmprestimoRepository();
+        EmprestimoService emprestimoService = new EmprestimoService(emprestimoRepository);
+        EmprestimoController emprestimoController = new EmprestimoController(emprestimoService, clienteService, menuService, livroService);
 
+        clienteController.cadastrar_cliente();
         livroController.cadastrar_livro();
-        livroController.cadastrar_livro();
-        livroController.listar_livros();
-
-
+        emprestimoController.emprestimo_livro();
     }
 }

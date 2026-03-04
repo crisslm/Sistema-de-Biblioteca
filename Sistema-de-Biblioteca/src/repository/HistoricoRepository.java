@@ -1,5 +1,6 @@
 package repository;
 
+import model.Emprestimo;
 import model.Historico;
 
 import java.util.ArrayList;
@@ -12,20 +13,18 @@ public class HistoricoRepository {
         historicos.add(historico);
     }
 
+    public void salvar_emprestimo(Emprestimo emprestimo, EmprestimoRepository emprestimoRepository){
+
+        Historico historico = new Historico();
+    }
+
     public void deletar(Historico historico){
         historicos.remove(historico);
     }
 
-    public Historico buscar(String id) {
-        for (Historico historico : historicos) {
-            if (historico.getCliente().getId().equals(id)) {
-                return historico;
-            }
-        }
-        return null;
-    }
 
-    public List<Historico> lista_historico(){
+
+    public List<Historico> listar_historico(){
         return historicos;
     }
 }

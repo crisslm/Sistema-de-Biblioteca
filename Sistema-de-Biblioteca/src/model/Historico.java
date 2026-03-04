@@ -1,21 +1,26 @@
 package model;
 
-public class Historico{
+import repository.EmprestimoRepository;
+
+import java.util.List;
+
+public class Historico {
     private Cliente cliente;
-    private Emprestimo emprestimo;
+    private List<Emprestimo> emprestimos;
 
-    public Historico(Cliente cliente, Emprestimo emprestimo){
-        this.cliente = cliente;
-        this.emprestimo = emprestimo;
+    public Historico(Cliente cliente, List<Emprestimo> emprestimos) {
+        this.emprestimos = emprestimos;
     }
-
-    //GETTERS
 
     public Cliente getCliente() {
         return cliente;
     }
 
-    public Emprestimo getEmprestimo() {
-        return emprestimo;
+    public List<Emprestimo> getHistorico() {
+        return emprestimos;
+    }
+
+    public void adicionar_emprestimo(Emprestimo emprestimo){
+        emprestimos.add(emprestimo);
     }
 }

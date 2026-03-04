@@ -16,6 +16,7 @@ public class LivroController {
     }
 
     public void cadastrar_livro(){
+        System.out.println("Cadastrando novo Livro: \n");
         System.out.print("Titulo: ");
         String titulo = sc.nextLine();
         Autor novoAutor = autorController.cadastrar_autor();

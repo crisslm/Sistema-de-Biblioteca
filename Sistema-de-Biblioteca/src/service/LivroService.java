@@ -50,4 +50,31 @@ public class LivroService {
             System.out.println("--------------------------------");
         }
     }
+
+    public Livro buscar_id(String id) {
+        for (Livro livro : livroRepository.lista_livros()) {
+            if (livro.getId().equals(id)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
+    public Livro buscar_titulo(String titulo) {
+        for (Livro livro : livroRepository.lista_livros()) {
+            if (livro.getTitulo().equals(titulo)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
+    public Livro buscar_autor(String autor) {
+        for (Livro livro : livroRepository.lista_livros()) {
+            if (livro.getAutor().getNome().equals(autor)) {
+                return livro;
+            }
+        }
+        return null;
+    }
 }

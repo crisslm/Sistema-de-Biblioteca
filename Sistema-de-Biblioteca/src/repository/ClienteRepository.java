@@ -16,15 +16,6 @@ public class ClienteRepository {
         clientes.remove(cliente);
     }
 
-    public Cliente buscar(String id) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getId().equals(id)) {
-                return cliente;
-            }
-        }
-        return null;
-    }
-
     public List<Cliente> lista_clientes(){
         return clientes;
     }
