@@ -16,15 +16,6 @@ public class LivroRepository {
         livros.remove(livro);
     }
 
-    public Livro buscar_id(String id) {
-        for (Livro livro : livros) {
-            if (livro.getId().equals(id)) {
-                return livro;
-            }
-        }
-        return null;
-    }
-
     public List<Livro> lista_livros(){
         return livros;
     }

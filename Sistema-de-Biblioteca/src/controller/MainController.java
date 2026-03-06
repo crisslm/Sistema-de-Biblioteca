@@ -49,6 +49,7 @@ public class MainController {
                         case 2 -> { //POR TITULO
                             livroController.buscar_livro_titulo();
                             optionsMenuPrincipal = menuController.menu_principal();
+                            
                         }
                     }
                 }

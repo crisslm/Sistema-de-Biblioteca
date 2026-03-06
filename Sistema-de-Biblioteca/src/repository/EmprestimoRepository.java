@@ -1,7 +1,6 @@
 package repository;
 
 import model.Emprestimo;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,15 +13,6 @@ public class EmprestimoRepository {
 
     public void deletar(Emprestimo emprestimo){
         emprestimos.remove(emprestimo);
-    }
-
-    public Emprestimo buscar(String id) {
-        for (Emprestimo emprestimo : emprestimos) {
-            if (emprestimo.getId().equals(id)) {
-                return emprestimo;
-            }
-        }
-        return null;
     }
 
     public List<Emprestimo> lista_emprestimos(){

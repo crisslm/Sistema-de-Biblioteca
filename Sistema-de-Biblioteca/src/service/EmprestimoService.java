@@ -21,7 +21,6 @@ public class EmprestimoService {
         historicoService = new HistoricoService(historicoRepository);
     }
 
-
     public void emprestimo_livro(Cliente cliente, Livro livro){
         String id;
         do {
@@ -42,6 +41,8 @@ public class EmprestimoService {
         for(Emprestimo emprestimo : emprestimoRepository.lista_emprestimos()){
             if(emprestimo.getCliente().getId().equals(cliente.getId())){
                 emprestimo.getLivro().setDisponivel(true);
+                LocalDate dataAtt = LocalDate.now();
+                emprestimo.getLivro().setDataAtualizacao(dataAtt);
                 devolucao = emprestimo;
                 System.out.println("Livro devolvido com sucesso!\n");
                 count++;

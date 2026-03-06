@@ -36,7 +36,7 @@ public class ClienteService {
     public void deletar_cliente(String id){
         Cliente cliente = buscar_cliente_id(id);
         clienteRepository.deletar(cliente);
-    }
+    } //Implementacao futura
 
     public Cliente buscar_cliente_id(String id) {
         for (Cliente cliente : clienteRepository.lista_clientes()) {
@@ -64,19 +64,15 @@ public class ClienteService {
         }
         return null;
     }
+
     public void listar_clientes(){
         int count = 0;
-        System.out.println("============================");
         for(Cliente cliente : clienteRepository.lista_clientes()){
-            System.out.printf("ID: %s\n", cliente.getId());
-            System.out.printf("Nome: %s\n", cliente.getNome());
-            System.out.printf("Email: %s\n", cliente.getEmail());
-            System.out.println("============================");
+            printar_cliente(cliente);
             count++;
         }
         if(count == 0){
             System.out.println("Nenhum cliente cadastrado.");
-            System.out.println("============================");
         }
     }
 

@@ -45,7 +45,6 @@ public class LivroController {
         livroService.listar_livros_por_autor(autor);
     }
 
-
     public void buscar_livro_id(){
         System.out.println("Buscando Livro por ID: \n");
         System.out.print("ID do livro: ");
